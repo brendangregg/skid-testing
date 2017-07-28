@@ -40,7 +40,7 @@ perf script --header -F comm,pid,tid,time,event,ip,sym,symoff,dso |\
 
 This can also be saved to a file, and used as input for skid.r plotting. Sample:
 
-<center><a href="skid.png"><img src="skid.png" border=0 width=600></a></center>
+<center><a href="skid.png"><img src="skid.png" border=0 width=700></a></center>
 
 That's excluding hits, although in this case it was over 99% skids (hits 131, skid 152565).
 
@@ -50,4 +50,3 @@ That's excluding hits, although in this case it was over 99% skids (hits 131, sk
 perf script --header -F comm,pid,tid,time,event,ip,sym,symoff,dso |\
     awk '/noprunway/ { sub(/noprunway\+/, "", $6); print $6 }' | perl -e 'while (<>) { $idx = int(hex($_)/10); @a[$idx]++; $m = $idx if $idx > $m; } for ($i = 0; $i < $m; $i++) { $a[$i] += 0; print $i * 10 . " " . $a[$i] . "\n"; }'
 ```
-
