@@ -14,7 +14,7 @@ For example, every 1000 LLC-miss on Intel using Linux perf:
 perf record -vv -e r412e -c 1000 ./skidtest 1000000
 ```
 
-Check the verbose output (-vv) to understand if precise_ip (PEBS) was auto-enabled or not.
+Check the verbose output (-vv) to see if precise_ip (PEBS) was auto-enabled or not (to measure the baseline skid, you want this off).
 
 Choose a size greater than the LLC cache to induce misses.
 
