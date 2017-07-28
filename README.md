@@ -1,5 +1,7 @@
 # Processor PMC event skid testing
 
+Work in progress.
+
 ## Building
 
 ```
@@ -38,7 +40,9 @@ perf script --header -F comm,pid,tid,time,event,ip,sym,symoff,dso |\
 
 This can also be saved to a file, and used as input for skid.r plotting. Sample:
 
-[![Example](skid.png)](skid.png)
+<center><a href="skid.png"><img src="skid.png" border=0 width=600></a></center>
+
+That's excluding hits, although in this case it was over 99% skids (hits 131, skid 152565).
 
 ### skid offset histogram (as text)
 
