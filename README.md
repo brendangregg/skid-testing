@@ -2,6 +2,8 @@
 
 Work in progress.
 
+- skidtest.c: in a loop, this calls a memory read followed by a NOP "runway" of thousands of no-operations. The read can then be instrumented with PMCs to capture the instruction pointer, which often falls on the NOP runway (which themselves will not cause a read, other than initially loading into the instruction cache). The offset seen in the NOP runway shows the magnitude of skid.
+
 ## Building
 
 ```
